@@ -1,0 +1,25 @@
+[project]
+name = "uv-setuptools-rust-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools]
+py-modules = ["hello", "rslib"]
+
+[build-system]
+requires = ["setuptools", "setuptools-rust"]
+build-backend = "setuptools.build_meta"
+
+[tool.uv]
+package = true
+cache-keys = [{ file = "rslib/Cargo.toml" }, { file = "**/*.rs" }]
+
+[project.scripts]
+main = "hello:main"
+
+[[tool.setuptools-rust.ext-modules]]
+target = "rslib"
+path = "rslib/Cargo.toml"
