@@ -1,0 +1,1 @@
+# uv-setuptools-rust-template
